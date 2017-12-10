@@ -16,7 +16,12 @@ defmodule GitPeer.Cli.MixProject do
       elixir: "~> 1.6-dev",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      escript: [main_module: GitPeer.Cli, name: "git-peer"]
+      escript: [
+        main_module: GitPeer.Cli,
+        name: "git-peer",
+        embed_elixir: true,
+        emu_args: ["-sname client"]
+      ]
     ]
   end
 
@@ -32,7 +37,8 @@ defmodule GitPeer.Cli.MixProject do
     [
       {:git_cli, "~> 0.2.4"},
       {:gitex, "~> 0.2.0"},
-      {:logger_lager_backend, "~> 0.1.0"}
+      {:logger_lager_backend, "~> 0.1.0"},
+      {:optimus, "~> 0.1.0"}
     ]
   end
 end
