@@ -1,4 +1,8 @@
 defmodule GitPeer.Daemon.Connect do
+  @moduledoc "Functions related to network connectivity"
+
+  use GenServer
+
   def parse_ip(ip) when is_tuple(ip) do
     {:ok, ip}
   end
@@ -22,8 +26,16 @@ defmodule GitPeer.Daemon.Connect do
     :partisan_peer_service_manager.myself()
   end
 
+  def start_link(options \\ []) do
+    GenServer.start_link(__MODULE__, options, name: __MODULE__)
+  end
+
   def list_ips do
-    with {:ok, ips} <- :inet.getifaddrs() do
+    GenServer.call(__MODULE__, :list_ips)
+  end
+
+  def handle_call(:list_ips, _from, state) do
+    reply = with {:ok, ips} <- :inet.getifaddrs() do
       ips
       |> Enum.reduce([], fn {key, features}, acc ->
            flags = Keyword.get(features, :flags, [])
@@ -37,5 +49,6 @@ defmodule GitPeer.Daemon.Connect do
          end)
       |> Enum.into(%{})
     end
+    {:reply, {:ok, reply}, state}
   end
 end
