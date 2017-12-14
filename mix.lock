@@ -15,6 +15,7 @@
   "partisan": {:hex, :partisan, "1.3.3", "1f2c02c782f1eba4d2d7199d253e0f674d0c783e6a0cb4f79e97d134cc6cfb78", [], [{:acceptor_pool, "1.0.0-rc.0", [hex: :acceptor_pool, repo: "hexpm", optional: false]}, {:lager, "~> 3.5", [hex: :lager, repo: "hexpm", optional: false]}, {:types, "~> 0.1", [hex: :types, repo: "hexpm", optional: false]}], "hexpm"},
   "plumtree": {:hex, :plumtree, "0.5.0", "f3521ce631ad22ac00635e79c7f046a163bd1135889cdc1d0b18ab577f76ec70", [], [{:lager, "~>3.5", [hex: :lager, repo: "hexpm", optional: false]}, {:lasp_support, "~>0.0", [hex: :lasp_support, repo: "hexpm", optional: false]}, {:partisan, "~>1.2", [hex: :partisan, repo: "hexpm", optional: false]}, {:rand_compat, "~>0.0.3", [hex: :rand_compat, repo: "hexpm", optional: false]}, {:time_compat, "~>0.0.1", [hex: :time_compat, repo: "hexpm", optional: false]}], "hexpm"},
   "rand_compat": {:hex, :rand_compat, "0.0.3", "011646bc1f0b0c432fe101b816f25b9bbb74a085713cee1dafd2d62e9415ead3", [], [], "hexpm"},
+  "table": {:hex, :table, "0.0.5", "2cbae124d3cd75e661c9a921a9b9aa9fe5f2735050292de1bae811c49b49feb8", [], [], "hexpm"},
   "time_compat": {:hex, :time_compat, "0.0.1", "23fe0ad1fdf3b5b88821b2d04b4b5e865bf587ae66056d671fe0f53514ed8139", [], [], "hexpm"},
   "types": {:hex, :types, "0.1.7", "7542cee48e664521bcf0311eec3b433e70d80dcdf34dc18d8f0d39921afe6831", [], [], "hexpm"},
   "yamerl": {:hex, :yamerl, "0.4.0", "ae215b1242810a9bc07716b88062f1bfe06f6bc7cf68372091f630baa536df79", [], [], "hexpm"},

@@ -15,8 +15,12 @@ defmodule GitPeer.Cli do
     server = :"server@#{hostname}" |> IO.inspect()
 
     with :pong <- Node.ping(server) |> IO.inspect() do
-      args
+      {:ok, result} = args
       |> command(server)
+
+      result
+      |> Table.table()
+      |> IO.puts()
     else
       :pang -> {:error, "Unable to connect to #{server}"} |> IO.inspect(label: :pang)
       error -> error |> IO.inspect(label: :wtf?)
